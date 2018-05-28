@@ -1,0 +1,28 @@
+{
+  "name": "static",
+  "authors": [
+    "Shubham Jain <shubhrjain7@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~1.3.3",
+    "angular-chartist.js": "~3.3.12",
+    "angular-route": "~1.5.8",
+    "angular-ui-router": "~0.3.2",
+    "jquery": "^3.2.1",
+    "oclazyload": "^1.1.0"
+  },
+  "resolutions": {
+    "jquery": "^3.2.1"
+  }
+}

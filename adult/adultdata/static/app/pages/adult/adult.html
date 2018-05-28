@@ -1,0 +1,78 @@
+ <div>
+
+        <h1>Male VS Female Pie Chart</h1>
+        <canvas id="pie" class="chart chart-pie chart-click"
+              chart-data="sexData" chart-options="options" chart-labels="sexLabels">
+        </canvas>
+
+        <h1>Relationship pie chart</h1>
+        <canvas id="pie" class="chart chart-pie chart-click"
+              chart-data="relationData" chart-options="options" chart-labels="relationLabels">
+        </canvas>
+
+     <table class="table table-striped table-condensed table-hover">
+         <thead>
+
+             <tr>
+                 <th class="id" custom-sort order="'id'" sort="sort">Id&nbsp;</th>
+                 <th class="name" custom-sort order="'name'" sort="sort">Age&nbsp;</th>
+                 <th class="workclass" custom-sort order="'workclass'" sort="sort">workclass&nbsp;</th>
+                 <th class="fnlwgt" custom-sort order="'fnlwgt'" sort="sort">fnlwgt&nbsp;</th>
+                 <th class="education" custom-sort order="'education'" sort="sort">education&nbsp;</th>
+                 <th class="education_num" custom-sort order="'education_num'" sort="sort">education_num&nbsp;</th>
+                 <th class="marital_status" custom-sort order="'marital_status'" sort="sort">marital_status&nbsp;</th>
+                 <th class="occupation" custom-sort order="'occupation'" sort="sort">occupation&nbsp;</th>
+                 <th class="relationship" custom-sort order="'relationship'" sort="sort">relationship&nbsp;</th>
+                 <th class="race" custom-sort order="'race'" sort="sort">race&nbsp;</th>
+                 <th class="sex" custom-sort order="'sex'" sort="sort">sex&nbsp;</th>
+                 <th class="capital_gain" custom-sort order="'capital_gain'" sort="sort">capital_gain&nbsp;</th>
+                 <th class="capital_loss" custom-sort order="'capital_loss'" sort="sort">capital_loss&nbsp;</th>
+                 <th class="hours_per_week" custom-sort order="'hours_per_week'" sort="sort">hours_per_week&nbsp;</th>
+                 <th class="native_country" custom-sort order="'native_country'" sort="sort">native_country&nbsp;</th>
+             </tr>
+         </thead>
+         <tfoot>
+             <td colspan="6">
+                 <div class="pagination pull-right">
+                     <ul>
+                         <li ng-class="{disabled: currentPage == 0}">
+                             <a href ng-click="prevPage()">« Prev</a>
+                         </li>
+
+                         <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) "
+                             ng-class="{active: n == currentPage}"
+                         ng-click="setPage()">
+                             <a href ng-bind="n + 1">1</a>
+                         </li>
+
+                         <li ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                             <a href ng-click="nextPage()">Next »</a>
+                         </li>
+                     </ul>
+                 </div>
+             </td>
+         </tfoot>
+         <pre>pagedItems.length: {{pagedItems.length|json}}</pre>
+         <pre>currentPage: {{currentPage|json}}</pre>
+         <pre>currentPage: {{sort|json}}</pre>
+         <tbody>
+             <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
+                 <td>{{item.id}}</td>
+                 <td>{{item.age}}</td>
+                 <td>{{item.workclass}}</td>
+                 <td>{{item.fnlwgt}}</td>
+                 <td>{{item.education}}</td>
+                 <td>{{item.education_num}}</td>
+                 <td>{{item.marital_status}}</td>
+                 <td>{{item.occupation}}</td>
+                 <td>{{item.relationship}}</td>
+                 <td>{{item.race}}</td>
+                 <td>{{item.sex}}</td>
+                 <td>{{item.capital_gain}}</td>
+                 <td>{{item.capital_loss}}</td>
+                 <td>{{item.hours_per_week}}</td>
+                 <td>{{item.native_country}}</td>
+             </tr>
+         </tbody>
+     </table>
+ </div>
