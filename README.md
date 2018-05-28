@@ -34,7 +34,8 @@ AdultData is display of adult data set
     - `cd adultdata/static `
     - `bower install`
     - `npm install angular-chart.js --save`
-
+  - Access Application at
+    - http://localhost:8000/static/index.html
 #References
 - https://www.codingforentrepreneurs.com/blog/install-django-on-mac-or-linux/
 - http://fernandorodrigues.pro/creating-a-rest-apiwebservice-with-django-rest-framework-and-mysql-using-python-3/
